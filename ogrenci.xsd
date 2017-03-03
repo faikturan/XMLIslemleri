@@ -1,0 +1,28 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.faikturan.com/ogrenci"
+xmlns:tns="http://www.faikturan.com/ogrenci"
+elementFormDefault="unqualified">
+<xs:complexType name="adresTipi">
+<xs:sequence>
+<xs:element name="il" type="xs:string"></xs:element>
+<xs:element name="ilce" type="xs:string"></xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ogrenciTipi">
+<xs:sequence>
+<xs:element name="ad" type="xs:string"></xs:element>
+<xs:element name="soyad" type="xs:string"></xs:element>
+<xs:element name="ders" type="xs:string"></xs:element>
+</xs:sequence>
+<xs:attribute name="no" type="xs:int"></xs:attribute>
+</xs:complexType>
+<xs:complexType name="ogrencilerTipi">
+<xs:sequence>
+<xs:element name="ogrenci" type="tns:ogrenciTipi"
+minOccurs="1" maxOccurs="100"></xs:element>
+<xs:element name="adres" type="tns:adresTipi" minOccurs="1"
+maxOccurs="100"></xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ogrenciler" type="tns:ogrencilerTipi"></xs:element>
+</xs:schema>
